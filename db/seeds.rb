@@ -14,6 +14,7 @@ User.destroy_all
 user1 = User.create!(username: "selin", password_digest: "123")
 
 post1 = Post.create!(img_url: "randourl", content: "rando content", user: user1)
+Post.create!(img_url: "randourl2", content: "rando content 2", user: user1)
 
 comment1 = Comment.create!(content: "random content", user: user1, post: post1)
 
