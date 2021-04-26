@@ -138,7 +138,7 @@ App.js
 
 ## Post-MVP
 
-> I would like to be able to have users follow each other so that they can curate their specific experience. I would also like to have a list of all of the photos that a user has liked. I would render this to another page so that a user can revisit previously liked photos. Additionally if time permits I would like to allow subcomments so users can respond to other users' comments.
+> My highest priority post-mvp item is image upload using AWS. I would like to be able to have users follow each other so that they can curate their specific experience. I would also like to have a list of all of the photos that a user has liked. I would render this to another page so that a user can revisit previously liked photos. Additionally if time permits I would like to allow subcomments so users can respond to other users' comments.
 
 ***
 
