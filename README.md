@@ -128,10 +128,8 @@ src
 ### Server (Back End)
 
 #### ERD Model
+![P4 ERD](https://user-images.githubusercontent.com/19270116/116092842-c44ca180-a66b-11eb-8526-efd5029af39f.png)
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
-
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
 <br>
 
 ***
