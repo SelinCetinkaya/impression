@@ -30,19 +30,16 @@ _**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum ri
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_This project will be a functional image upload and sharing application, utilizng at least 3 tables with one-to-many assiciations between them. Users will be able to upload their own photos, comment on any photo, and "like" photos. There will be basic styling using a component library as well as media queries to allow for usability across many different devices._
 
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Reach MVP in the designated timeframe_
+- _At least 3 tables_
+- _Full CRUD for non-user tables_
+
 
 <br>
 
@@ -52,10 +49,10 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _Frontend framework for user-facing content._ |
 |   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
+|     Ant Design   | _Components library for design elements._ |
+|       Rails      | _Backend framework for database management._ |
 |  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
 
 <br>
@@ -141,7 +138,7 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+> I would like to be able to have users follow each other.
 
 ***
 
