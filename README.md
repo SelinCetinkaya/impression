@@ -79,9 +79,7 @@ _This project will be a functional image upload and sharing application, utilizn
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
-
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+[Component Tree](https://user-images.githubusercontent.com/19270116/116121017-cc193f80-a685-11eb-8176-bee0138446ab.png)
 
 #### Component Architecture
 
