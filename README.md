@@ -23,7 +23,7 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**Project Title** is an application where users can share and like photos._
 
 
 <br>
@@ -50,10 +50,10 @@ _This project will be a functional image upload and sharing application, utilizn
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
 |      React       | _Frontend framework for user-facing content._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
+|   React Router   | _Client side routing._ |
 |     Ant Design   | _Components library for design elements._ |
 |       Rails      | _Backend framework for database management._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|     Firebase     | _Image upload._ |
 
 <br>
 
@@ -61,31 +61,21 @@ _This project will be a functional image upload and sharing application, utilizn
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](url)
+![Landing Page](https://user-images.githubusercontent.com/19270116/116118090-96bf2280-a682-11eb-9245-0648911f876c.png)
 
-- Desktop Landing
+![Sign Up Page](https://user-images.githubusercontent.com/19270116/116118167-a76f9880-a682-11eb-95d9-b8e30f2d0ce7.png)
 
-![Dummy Link](url)
+![Browse Page](https://user-images.githubusercontent.com/19270116/116118249-b5bdb480-a682-11eb-9bff-31c19ddf64a1.png)
 
-- Desktop Hero
+![Details Page](https://user-images.githubusercontent.com/19270116/116118295-bfdfb300-a682-11eb-91cd-fe3b2485dfcb.png)
 
-![Dummy Link](url)
+![Add Comment Page](https://user-images.githubusercontent.com/19270116/116118359-d128bf80-a682-11eb-8eea-557f00919a29.png)
 
-- Resource Index
+![Edit Post](https://user-images.githubusercontent.com/19270116/116118393-dd148180-a682-11eb-8080-f4057fbb6644.png)
 
-![Dummy Link](url)
+![Create Post Page](https://user-images.githubusercontent.com/19270116/116118415-e6055300-a682-11eb-9e1a-704a2096757f.png)
 
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
 
 #### Component Tree
 
