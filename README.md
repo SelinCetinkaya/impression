@@ -1,9 +1,5 @@
 # PROJECT 4 README <!-- omit in toc -->
 
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
-
 - [Overview](#overview)
 - [MVP](#mvp)
   - [Goals](#goals)
@@ -30,15 +26,17 @@ _**Impression** is an application where users can share and like photos. They ha
 
 ## MVP
 
-_This project will be a functional image upload and sharing application, utilizng at least 3 tables with one-to-many assiciations between them. Users will be able to upload their own photos, comment on any photo, and "like" photos. There will be basic styling using a component library as well as media queries to allow for usability across many different devices._
+_This project will be an image upload and sharing application, utilizng at least 3 tables with one-to-many assiciations between them. Users will be able to upload their own photos, comment on any photo, and "like" photos. There will be basic styling using a component library as well as media queries to allow for usability across many different devices._
 
 <br>
 
 ### Goals
 
-- _Reach MVP in the designated timeframe_
-- _At least 3 tables_
+- _4 tables_
 - _Full CRUD for non-user tables_
+- _Users can only edit/delete their own posts_
+- _Authentication (only users can enter the site)_
+- _Users can "like" photos_
 
 
 <br>
