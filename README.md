@@ -62,19 +62,19 @@ _This project will be a functional image upload and sharing application, utilizn
 #### Wireframes
 
 
-![Landing Page](https://user-images.githubusercontent.com/19270116/116118090-96bf2280-a682-11eb-9245-0648911f876c.png)
+[Landing Page](https://user-images.githubusercontent.com/19270116/116118090-96bf2280-a682-11eb-9245-0648911f876c.png)
 
-![Sign Up Page](https://user-images.githubusercontent.com/19270116/116118167-a76f9880-a682-11eb-95d9-b8e30f2d0ce7.png)
+[Sign Up Page](https://user-images.githubusercontent.com/19270116/116118167-a76f9880-a682-11eb-95d9-b8e30f2d0ce7.png)
 
-![Browse Page](https://user-images.githubusercontent.com/19270116/116118249-b5bdb480-a682-11eb-9bff-31c19ddf64a1.png)
+[Browse Page](https://user-images.githubusercontent.com/19270116/116118249-b5bdb480-a682-11eb-9bff-31c19ddf64a1.png)
 
-![Details Page](https://user-images.githubusercontent.com/19270116/116118295-bfdfb300-a682-11eb-91cd-fe3b2485dfcb.png)
+[Details Page](https://user-images.githubusercontent.com/19270116/116118295-bfdfb300-a682-11eb-91cd-fe3b2485dfcb.png)
 
-![Add Comment Page](https://user-images.githubusercontent.com/19270116/116118359-d128bf80-a682-11eb-8eea-557f00919a29.png)
+[Add Comment Page](https://user-images.githubusercontent.com/19270116/116118359-d128bf80-a682-11eb-8eea-557f00919a29.png)
 
-![Edit Post](https://user-images.githubusercontent.com/19270116/116118393-dd148180-a682-11eb-8080-f4057fbb6644.png)
+[Edit Post](https://user-images.githubusercontent.com/19270116/116118393-dd148180-a682-11eb-8080-f4057fbb6644.png)
 
-![Create Post Page](https://user-images.githubusercontent.com/19270116/116118415-e6055300-a682-11eb-9e1a-704a2096757f.png)
+[Create Post Page](https://user-images.githubusercontent.com/19270116/116118415-e6055300-a682-11eb-9e1a-704a2096757f.png)
 
 
 #### Component Tree
