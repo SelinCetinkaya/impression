@@ -23,7 +23,7 @@
 
 ## Overview
 
-_**Project Title** is an application where users can share and like photos._
+_**Impression** is an application where users can share and like photos. They have the ability to upload their own photos to share with other users as well as like other users' photos. They will also have the ability to comment on posts. They can create, edit, browse, and delete photos. I want to use this project as an opportunity to learn about image uploading, authentication, and authorization before the class ends._
 
 
 <br>
@@ -51,7 +51,7 @@ _This project will be a functional image upload and sharing application, utilizn
 | :--------------: | :----------------------------------------- |
 |      React       | _Frontend framework for user-facing content._ |
 |   React Router   | _Client side routing._ |
-|     Ant Design   | _Components library for design elements._ |
+|     Ant Design   | _Components library for design elements and image upload._ |
 |       Rails      | _Backend framework for database management._ |
 |     Firebase     | _Image upload._ |
 
@@ -83,19 +83,25 @@ _This project will be a functional image upload and sharing application, utilizn
 
 #### Component Architecture
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
-
 ``` structure
 
 src
 |__ assets/
       |__ fonts
-      |__ graphics
       |__ images
-      |__ mockups
 |__ components/
-      |__ Header.jsx
+      |__ Layout.jsx
+      |__ SignIn.jsx
+      |__ SignUp.jsx
+      |__ CreatePost.jsx
+      |__ MainContainer.jsx
+      |__ Posts.jsx
+      |__ PostDetails.jsx
+      |__ PostEdit.jsx
+      |__ Comment.jsx
 |__ services/
+      |__ api-config.js
+App.js
 
 ```
 
@@ -105,11 +111,24 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Create backend models |    H     |     2 hrs      |      hrs     |     TBD     |
+| Create backend controllers |    H     |     2 hrs      |      hrs     |     TBD     |
+| Build all backend endpoints |    H     |     4 hrs      |      hrs     |     TBD     |
+| Test full CRUD on backend |    H     |     2 hrs      |      hrs     |     TBD     |
+| Image upload functionality |    M     |     4 hrs      |      hrs     |     TBD     |
+| User authentication |    H     |     3 hrs      |      hrs     |     TBD     |
+| Sign in form    |    H     |     2 hrs      |      hrs     |     hrs    |
+| Sign up form    |    H     |     2 hrs      |      hrs     |     hrs    |
+| "liking" functionality    |    H     |     3 hrs      |      hrs     |     hrs    |
+| Construct Layout    |    H     |     3 hrs      |      hrs     |     hrs    |
+| Implement Ant Design    |    M     |     2 hrs      |      hrs     |     hrs    |
+| Additional CSS    |    M     |     5 hrs      |      hrs     |     hrs    |
+| Edit post functionality    |    H     |     2 hrs      |      hrs     |     hrs    |
+| Edit post authorization    |    H     |     4 hrs      |      hrs     |     hrs    |
+| Create post functionality    |    H     |     3 hrs      |      hrs     |     hrs    |
+| Ability to comment    |    M     |     4 hrs      |      hrs     |     hrs    |
+| TOTAL               |          |     47 hrs      |      hrs     |     TBD     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
@@ -124,7 +143,7 @@ src
 
 ## Post-MVP
 
-> I would like to be able to have users follow each other.
+> I would like to be able to have users follow each other so that they can curate their specific experience. I would also like to have a list of all of the photos that a user has liked. I would render this to another page so that a user can revisit previously liked photos.
 
 ***
 
