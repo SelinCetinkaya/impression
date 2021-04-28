@@ -4,20 +4,32 @@ import Register from "./screens/Register/Register";
 import Header from "./components/Header/Header";
 import Posts from "./screens/Posts/Posts";
 import { Route } from "react-router-dom";
+import { currentUserStore } from "./stores/currentUserStore";
+import { useEffect } from "react";
 
 function App() {
+  const { currentUser, verify } = currentUserStore();
+
+  useEffect(() => {
+    verify();
+  }, [verify]);
   return (
     <div className="App">
       <Header />
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/register">
-        <Register />
-      </Route>
-      <Route path="/posts">
-        <Posts />
-      </Route>
+      {currentUser.id ? (
+        <Route path="/posts">
+          <Posts />
+        </Route>
+      ) : (
+        <>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+        </>
+      )}
     </div>
   );
 }

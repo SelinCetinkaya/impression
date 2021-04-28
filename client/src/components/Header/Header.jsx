@@ -1,20 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
+import { useHistory } from "react-router-dom";
+
 import "./Header.css";
+import { currentUserStore } from "../../stores/currentUserStore";
 
 function Header(props) {
+  const { logout } = currentUserStore();
+  const history = useHistory();
+
+  const handleLogout = () => {
+    logout();
+    history.push("/");
+  };
   return (
     <div id="header">
-      <h2 id="logo">Impression</h2>
+      <Link to="/posts" className="logo-link">
+        <h2 id="logo">Impression</h2>
+      </Link>
       <div class="header-links">
-        <Link class="link" to="/create">
+        <Link className="link" to="/create">
           New Post
         </Link>
-        <Link class="link" to="/my-posts">
+        <Link className="link" to="/my-posts">
           My Posts
         </Link>
-        <Button>Log out</Button>
+        <Button onClick={handleLogout}>Log out</Button>
       </div>
     </div>
   );

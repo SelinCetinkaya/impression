@@ -12,6 +12,11 @@
   margin-left: 40px;
 }
 
+.logo-link {
+  text-decoration: none;
+  color: black;
+}
+
 .header-links {
   align-self: right;
   height: fit-content;
@@ -20,4 +25,6 @@
 
 .link {
   margin-right: 20px;
+  text-decoration: none;
+  color: black;
 }

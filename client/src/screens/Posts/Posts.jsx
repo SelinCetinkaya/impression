@@ -1,24 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { getPosts } from "../../services/posts";
+import React, { useEffect } from "react";
 
-function Posts(props) {
-  const [posts, setPosts] = useState([]);
+import { currentUserStore } from "../../stores/currentUserStore";
+import { postsStore } from "../../stores/postsStore";
+
+const Posts = (props) => {
+  const { posts, fetchPosts, addPost } = postsStore();
+  const { currentUser } = currentUserStore();
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      const posts = await getPosts();
-      console.log(posts);
-      setPosts(posts);
-    };
     fetchPosts();
-  }, []);
+  }, [fetchPosts]);
 
   return (
     <div>
       {posts.map((post) => (
-        <p>{post.content}</p>
+        <p key={post.id}>{post.content}</p>
       ))}
+      <button
+        onClick={() => {
+          addPost({
+            content: "fake content",
+            img_url: "123",
+            user_id: currentUser.id,
+          });
+        }}
+      >
+        asdf
+      </button>
     </div>
   );
-}
+};
 
 export default Posts;

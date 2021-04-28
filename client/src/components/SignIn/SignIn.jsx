@@ -1,8 +1,12 @@
-import React from "react";
-// import "antd/dist/antd.css";
+import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
+import { currentUserStore } from "../../stores/currentUserStore";
+import { useHistory } from "react-router-dom";
 
 function SignIn(props) {
+  const [form, setForm] = useState({});
+  const { login } = currentUserStore();
+  const history = useHistory();
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
@@ -11,12 +15,26 @@ function SignIn(props) {
     wrapperCol: { offset: 8, span: 16 },
   };
 
+  const handleFormChange = ({ key, val }) => {
+    setForm({ ...form, [key]: val });
+  };
+
+  const handleLoginClicked = async () => {
+    const user = await login(form);
+    if (user && user.id) {
+      history.push("/posts");
+    }
+  };
+
   return (
     <div>
       <Form {...layout} name="basic">
         <Form.Item
           label="Username"
           name="username"
+          onChange={(e) => {
+            handleFormChange({ key: "username", val: e.target.value });
+          }}
           rules={[{ required: true, message: "Please input your username!" }]}
         >
           <Input />
@@ -24,12 +42,15 @@ function SignIn(props) {
         <Form.Item
           label="Password"
           name="password"
+          onChange={(e) => {
+            handleFormChange({ key: "password", val: e.target.value });
+          }}
           rules={[{ required: true, message: "Please input your password!" }]}
         >
           <Input.Password />
         </Form.Item>
         <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" onClick={handleLoginClicked}>
             Log in
           </Button>
           <Button type="link" htmlType="button">
