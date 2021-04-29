@@ -2,7 +2,7 @@ import create from "zustand";
 
 import { loginUser, verifyUser, removeToken } from "../services/auth";
 
-export const currentUserStore = create((set, get) => ({
+export const useCurrentUserStore = create((set, get) => ({
   currentUser: {},
   login: async (userData) => {
     const user = await loginUser(userData);

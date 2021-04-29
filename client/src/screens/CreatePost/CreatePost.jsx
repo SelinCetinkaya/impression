@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Form, Input, Button } from "antd";
 
-import { currentUserStore } from "../../stores/currentUserStore";
-import { postsStore } from "../../stores/postsStore";
+import { useCurrentUserStore } from "../../stores/currentUserStore";
+import { usePostsStore } from "../../stores/postsStore";
 import "./CreatePost.css";
 
 function CreatePost(props) {
   const [form, setForm] = useState({});
-  const { fetchPosts, addPost } = postsStore();
-  const { currentUser } = currentUserStore();
+  const { fetchPosts, addPost } = usePostsStore();
+  const { currentUser } = useCurrentUserStore();
   const history = useHistory();
 
   useEffect(() => {

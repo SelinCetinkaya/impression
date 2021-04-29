@@ -9,9 +9,9 @@ import {
   updatePost,
   deletePost,
 } from "../services/posts";
-import { currentUserStore } from "./currentUserStore";
+import { useCurrentUserStore } from "./currentUserStore";
 
-export const postsStore = create((set, get) => ({
+export const usePostsStore = create((set, get) => ({
   posts: [],
   postsFetched: false,
   fetchPosts: async () => {
@@ -65,7 +65,7 @@ export const postsStore = create((set, get) => ({
     }));
   },
   addComment: async ({ post, content }) => {
-    const { currentUser } = currentUserStore.getState();
+    const { currentUser } = useCurrentUserStore.getState();
     const posts = [...get().posts];
     const index = posts.indexOf(post);
     const newComment = await createComment({
@@ -103,7 +103,7 @@ export const postsStore = create((set, get) => ({
 }));
 
 const formatPosts = (posts) => {
-  const { currentUser } = currentUserStore.getState();
+  const { currentUser } = useCurrentUserStore.getState();
   return posts.map((post) => {
     const likesCount = post.post_likes.filter((like) => like.is_liked).length;
     const like = post.post_likes.find((like) => {

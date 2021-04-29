@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { postsStore } from "../../stores/postsStore";
+import { usePostsStore } from "../../stores/postsStore";
 import { Button } from "antd";
 import "./PostDetails.css";
+import { useCurrentUserStore } from "../../stores/currentUserStore";
 
 function PostDetails(props) {
-  const { posts, removePost } = postsStore();
+  const { posts, removePost } = usePostsStore();
   const [post, setPost] = useState({});
   const { id } = useParams();
   const history = useHistory();
+
+  const { currentUser } = useCurrentUserStore();
 
   useEffect(() => {
     if (posts.length) {
@@ -23,22 +26,28 @@ function PostDetails(props) {
     history.push("/posts");
   };
 
+  if (!post.id) return <div></div>;
+
   return (
     <div className="post-details">
       <img className="image-details" src={post.img_url} />
       <div className="text-details">
-        <p>{post.user_id}</p>
+        <p>{post.user.username}</p>
         <br />
         <p>{post.content}</p>
       </div>
-      <Button>Edit</Button>
-      <Button
-        onClick={() => {
-          handleDeleteClicked(post);
-        }}
-      >
-        Test
-      </Button>
+      {post.user.id === currentUser.id && (
+        <>
+          <Button>Edit</Button>
+          <Button
+            onClick={() => {
+              handleDeleteClicked(post);
+            }}
+          >
+            Delete
+          </Button>
+        </>
+      )}
     </div>
   );
 }

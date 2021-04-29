@@ -4,10 +4,10 @@ import { Button } from "antd";
 import { useHistory } from "react-router-dom";
 
 import "./Header.css";
-import { currentUserStore } from "../../stores/currentUserStore";
+import { useCurrentUserStore } from "../../stores/currentUserStore";
 
 function Header(props) {
-  const { logout } = currentUserStore();
+  const { logout } = useCurrentUserStore();
   const history = useHistory();
 
   const handleLogout = () => {

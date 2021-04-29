@@ -6,13 +6,13 @@ import Posts from "./screens/Posts/Posts";
 import CreatePost from "./screens/CreatePost/CreatePost";
 import PostDetails from "./screens/PostDetails/PostDetails";
 import { Route } from "react-router-dom";
-import { currentUserStore } from "./stores/currentUserStore";
-import { postsStore } from "./stores/postsStore";
+import { useCurrentUserStore } from "./stores/currentUserStore";
+import { usePostsStore } from "./stores/postsStore";
 import { useEffect } from "react";
 
 function App() {
-  const { currentUser, verify } = currentUserStore();
-  const { fetchPosts } = postsStore();
+  const { currentUser, verify } = useCurrentUserStore();
+  const { fetchPosts } = usePostsStore();
 
   useEffect(() => {
     if (currentUser.id) {

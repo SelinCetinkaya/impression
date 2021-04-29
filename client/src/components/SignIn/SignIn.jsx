@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
-import { currentUserStore } from "../../stores/currentUserStore";
+import { useCurrentUserStore } from "../../stores/currentUserStore";
 import { useHistory } from "react-router-dom";
 
 function SignIn(props) {
   const [form, setForm] = useState({});
-  const { login } = currentUserStore();
+  const { login } = useCurrentUserStore();
   const history = useHistory();
   const layout = {
     labelCol: { span: 8 },

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { postsStore } from "../../stores/postsStore";
+import { usePostsStore } from "../../stores/postsStore";
 import "./Posts.css";
 
 const Posts = (props) => {
-  const { posts, togglePostLiked } = postsStore();
+  const { posts, togglePostLiked } = usePostsStore();
 
   const handleLikeClicked = (post) => {
     togglePostLiked(post);
