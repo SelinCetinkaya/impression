@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Form, Input, Button } from "antd";
 
 import { currentUserStore } from "../../stores/currentUserStore";
@@ -9,6 +10,7 @@ function CreatePost(props) {
   const [form, setForm] = useState({});
   const { fetchPosts, addPost } = postsStore();
   const { currentUser } = currentUserStore();
+  const history = useHistory();
 
   useEffect(() => {
     fetchPosts();
@@ -24,6 +26,7 @@ function CreatePost(props) {
       ...form,
       user_id: currentUser.id,
     });
+    history.push("/posts");
   };
 
   return (
@@ -43,7 +46,7 @@ function CreatePost(props) {
           label="Description"
           name="content"
           onChange={(e) => {
-            handleFormChange({ key: "caption", val: e.target.value });
+            handleFormChange({ key: "content", val: e.target.value });
           }}
           rules={[{ required: false }]}
         >

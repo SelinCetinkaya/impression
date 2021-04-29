@@ -1,0 +1,13 @@
+.post-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-details {
+  height: 500px;
+}
