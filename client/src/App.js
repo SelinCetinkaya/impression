@@ -3,6 +3,7 @@ import Home from "./screens/Home/Home";
 import Register from "./screens/Register/Register";
 import Header from "./components/Header/Header";
 import Posts from "./screens/Posts/Posts";
+import CreatePost from "./screens/CreatePost/CreatePost";
 import { Route } from "react-router-dom";
 import { currentUserStore } from "./stores/currentUserStore";
 import { useEffect } from "react";
@@ -17,9 +18,14 @@ function App() {
     <div className="App">
       <Header />
       {currentUser.id ? (
-        <Route path="/posts">
-          <Posts />
-        </Route>
+        <>
+          <Route path="/posts">
+            <Posts />
+          </Route>
+          <Route path="/create">
+            <CreatePost />
+          </Route>
+        </>
       ) : (
         <>
           <Route exact path="/">

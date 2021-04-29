@@ -1,0 +1,9 @@
+#create-form-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#create-form {
+  width: 30%;
+}

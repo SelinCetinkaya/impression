@@ -19,7 +19,7 @@ function Header(props) {
       <Link to="/posts" className="logo-link">
         <h2 id="logo">Impression</h2>
       </Link>
-      <div class="header-links">
+      <div className="header-links">
         <Link className="link" to="/create">
           New Post
         </Link>

@@ -5,12 +5,12 @@ class PostLikesController < ApplicationController
   def index
     @post_likes = PostLike.all
 
-    render json: @post_likes
+    render json: @post_likes, include: [:is_liked, :user, :post]
   end
 
   # GET /post_likes/1
   def show
-    render json: @post_like
+    render json: @post_like, include: [:is_liked, :user, :post]
   end
 
   # POST /post_likes
