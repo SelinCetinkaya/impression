@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post.user = @current_user
 
     if @post.save
-      render json: @post, status: :created
+      render json: @post, include: [:post_likes, :comments, :user], status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end

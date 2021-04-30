@@ -12,13 +12,15 @@ import { useEffect } from "react";
 
 function App() {
   const { currentUser, verify } = useCurrentUserStore();
-  const { fetchPosts } = usePostsStore();
+  const { fetchPosts, clearPosts } = usePostsStore();
 
   useEffect(() => {
     if (currentUser.id) {
       fetchPosts();
+    } else {
+      clearPosts();
     }
-  }, [fetchPosts, currentUser]);
+  }, [fetchPosts, , currentUser]);
 
   useEffect(() => {
     verify();

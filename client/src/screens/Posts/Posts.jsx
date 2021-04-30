@@ -11,32 +11,34 @@ const Posts = (props) => {
     togglePostLiked(post);
   };
 
+  // if (!post.id) return <div></div>;
+
   return (
     <div>
       {posts.map((post) => (
-        <Link to={`/posts/${post.id}`}>
-          <div className="post-card" key={post.id}>
+        <div className="post-card" key={post.id}>
+          <Link to={`/posts/${post.id}`}>
             <img className="thumbnail" src={post.img_url} alt={post.content} />
             <p>{post.user.username}</p>
-            {post.like.is_liked ? (
-              <HeartFilled
-                style={{ color: "red" }}
-                onClick={() => {
-                  handleLikeClicked(post);
-                }}
-              />
-            ) : (
-              <HeartOutlined
-                onClick={() => {
-                  handleLikeClicked(post);
-                }}
-              />
-            )}
-            likes: {post.likesCount}
-            <br />
-            comments: {post.commentsCount}
-          </div>
-        </Link>
+          </Link>
+          {post.like.is_liked ? (
+            <HeartFilled
+              style={{ color: "red" }}
+              onClick={() => {
+                handleLikeClicked(post);
+              }}
+            />
+          ) : (
+            <HeartOutlined
+              onClick={() => {
+                handleLikeClicked(post);
+              }}
+            />
+          )}
+          likes: {post.likesCount}
+          <br />
+          comments: {post.commentsCount}
+        </div>
       ))}
     </div>
   );

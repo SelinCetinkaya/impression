@@ -4,6 +4,7 @@ import { usePostsStore } from "../../stores/postsStore";
 import { Button } from "antd";
 import "./PostDetails.css";
 import { useCurrentUserStore } from "../../stores/currentUserStore";
+import EditModal from "../../components/EditModal/EditModal";
 
 function PostDetails(props) {
   const { posts, removePost } = usePostsStore();
@@ -12,6 +13,12 @@ function PostDetails(props) {
   const history = useHistory();
 
   const { currentUser } = useCurrentUserStore();
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
 
   useEffect(() => {
     if (posts.length) {
@@ -38,7 +45,13 @@ function PostDetails(props) {
       </div>
       {post.user.id === currentUser.id && (
         <>
-          <Button>Edit</Button>
+          <Button type="primary" onClick={showModal}>
+            Edit
+          </Button>
+          <EditModal
+            isModalVisible={isModalVisible}
+            setIsModalVisible={setIsModalVisible}
+          />
           <Button
             onClick={() => {
               handleDeleteClicked(post);

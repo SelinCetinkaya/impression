@@ -20,17 +20,20 @@ export const usePostsStore = create((set, get) => ({
       set({ posts: formatPosts(posts), postsFetched: true });
     }
   },
+  clearPosts: () => {
+    set({ posts: [], postsFetched: false });
+  },
   addPost: async (data) => {
-    console.log(data);
     const post = await createPost(data);
+    const newPost = formatPosts([post]);
     set((state) => ({
-      posts: [...state.posts, post],
+      posts: [...state.posts, ...newPost],
     }));
   },
   editPost: ({ post, content }) => {
     const posts = [...get().posts];
     const index = posts.indexOf(post);
-    updatePost({ post, content });
+    updatePost(post);
     posts[index] = {
       ...post,
       content,
@@ -68,6 +71,7 @@ export const usePostsStore = create((set, get) => ({
     const { currentUser } = useCurrentUserStore.getState();
     const posts = [...get().posts];
     const index = posts.indexOf(post);
+    console.log(post);
     const newComment = await createComment({
       content,
       user_id: currentUser.id,

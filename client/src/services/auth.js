@@ -21,7 +21,7 @@ export const verifyUser = async () => {
     const resp = await api.get("/auth/verify");
     return resp.data;
   }
-  return null;
+  return {};
 };
 
 export const removeToken = () => {
