@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { useCurrentUserStore } from "../../stores/currentUserStore";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 function SignIn(props) {
   const [form, setForm] = useState({});
@@ -53,9 +53,11 @@ function SignIn(props) {
           <Button type="primary" htmlType="submit" onClick={handleLoginClicked}>
             Log in
           </Button>
-          <Button type="link" htmlType="button">
-            Sign up
-          </Button>
+          <Link to="/register">
+            <Button type="link" htmlType="button">
+              Sign up
+            </Button>
+          </Link>
         </Form.Item>
       </Form>
     </div>

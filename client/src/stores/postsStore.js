@@ -33,7 +33,7 @@ export const usePostsStore = create((set, get) => ({
   editPost: ({ post, content }) => {
     const posts = [...get().posts];
     const index = posts.indexOf(post);
-    updatePost(post);
+    updatePost({ ...post, content });
     posts[index] = {
       ...post,
       content,

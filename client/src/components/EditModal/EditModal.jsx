@@ -3,7 +3,7 @@ import { Modal, Button, Form, Input } from "antd";
 import { usePostsStore } from "../../stores/postsStore";
 import { useParams } from "react-router-dom";
 
-function EditModal({ isModalVisible, setIsModalVisible }) {
+function EditModal({ isEditModalVisible, setIsEditModalVisible }) {
   const { posts, editPost } = usePostsStore();
   const [form, setForm] = useState({});
   const [post, setPost] = useState({});
@@ -25,11 +25,11 @@ function EditModal({ isModalVisible, setIsModalVisible }) {
       post,
       ...form,
     });
-    setIsModalVisible(false);
+    setIsEditModalVisible(false);
   };
 
   const handleCancel = () => {
-    setIsModalVisible(false);
+    setIsEditModalVisible(false);
   };
 
   if (!post.id) return <div></div>;
@@ -38,11 +38,11 @@ function EditModal({ isModalVisible, setIsModalVisible }) {
     <>
       <Modal
         title="Basic Modal"
-        visible={isModalVisible}
+        visible={isEditModalVisible}
         onOk={handleSubmit}
         onCancel={handleCancel}
       >
-        <Form id="create-form">
+        <Form id="edit-form">
           <Form.Item
             label="Description"
             name="content"

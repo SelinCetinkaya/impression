@@ -20,11 +20,12 @@ function App() {
     } else {
       clearPosts();
     }
-  }, [fetchPosts, , currentUser]);
+  }, [fetchPosts, currentUser, clearPosts]);
 
   useEffect(() => {
     verify();
   }, [verify]);
+
   return (
     <div className="App">
       <Header />
@@ -32,6 +33,9 @@ function App() {
         <>
           <Route exact path="/posts">
             <Posts />
+          </Route>
+          <Route exact path="/my-posts">
+            <Posts isMyPosts />
           </Route>
           <Route path="/create">
             <CreatePost />
