@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Form, Input } from "antd";
+import { Modal, Form, Input } from "antd";
 import { usePostsStore } from "../../stores/postsStore";
 import { useParams } from "react-router-dom";
 

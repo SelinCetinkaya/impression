@@ -47,7 +47,7 @@ function PostDetails(props) {
 
   return (
     <div className="post-details">
-      <img className="image-details" src={post.img_url} />
+      <img className="image-details" alt={post.content} src={post.img_url} />
       <div className="text-details">
         <p>{post.user.username}</p>
         <br />
