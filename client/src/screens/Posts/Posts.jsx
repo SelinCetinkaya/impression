@@ -20,8 +20,6 @@ const Posts = (props) => {
     togglePostLiked(post);
   };
 
-  // if (!post.id) return <div></div>;
-
   return (
     <div>
       {(props.isMyPosts ? myPosts : posts).map((post) => (
