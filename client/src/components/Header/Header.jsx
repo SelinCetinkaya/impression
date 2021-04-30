@@ -22,13 +22,18 @@ function Header(props) {
             <h2 id="logo">Impression</h2>
           </Link>
           <div className="header-links">
-            <Link className="link" to="/create">
+            <Link className="link link-button" to="/posts">
+              All Posts
+            </Link>
+            <Link className="link link-button" to="/create">
               New Post
             </Link>
-            <Link className="link" to="/my-posts">
+            <Link className="link link-button" to="/my-posts">
               My Posts
             </Link>
-            <Button onClick={handleLogout}>Log out</Button>
+            <Button className="pink-button" onClick={handleLogout}>
+              Log out
+            </Button>
           </div>
         </>
       ) : (

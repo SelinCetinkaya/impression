@@ -6,3 +6,24 @@ body {
   background-color: #e8ded4;
   font-family: "Rokkitt", serif;
 }
+
+.pink-button {
+  background-color: #f4cabb;
+  border-color: #a36c5b;
+  color: #a36c5b;
+}
+
+.pink-button:hover {
+  background-color: white;
+  border-color: #a36c5b;
+  color: #a36c5b;
+}
+
+.link-button {
+  text-decoration: none;
+  color: rgb(96, 96, 96);
+}
+
+.link-button:hover {
+  color: white;
+}

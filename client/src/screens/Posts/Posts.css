@@ -1,5 +1,6 @@
 .thumbnail {
-  height: 250px;
+  height: auto;
+  width: 100%;
 }
 
 .posts {
@@ -8,12 +9,16 @@
   flex-wrap: wrap;
   margin-left: 200px;
   margin-right: 200px;
+  margin-top: 50px;
+  justify-content: space-between;
 }
 
 .post-card {
   border: 1px solid #a36c5b;
   margin: 30px;
   text-align: left;
+  height: auto;
+  width: 250px;
 }
 
 .post-text {

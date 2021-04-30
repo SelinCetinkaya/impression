@@ -30,32 +30,46 @@ function CreatePost(props) {
   };
 
   return (
-    <div id="create-form-div">
-      <Form id="create-form">
-        <Form.Item
-          label="Image URL"
-          name="img_url"
-          onChange={(e) => {
-            handleFormChange({ key: "img_url", val: e.target.value });
-          }}
-          rules={[{ required: true, message: "Please input an image URL!" }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label="Description"
-          name="content"
-          onChange={(e) => {
-            handleFormChange({ key: "content", val: e.target.value });
-          }}
-          rules={[{ required: false }]}
-        >
-          <Input />
-        </Form.Item>
-        <Button type="primary" htmlType="submit" onClick={handleSubmit}>
-          Create Post
-        </Button>
-      </Form>
+    <div id="create-post-page">
+      <h3>Create Post</h3>
+      <div id="create-form-div">
+        <Form id="create-form">
+          <div id="img_url-input">
+            Image URL:
+            <Form.Item
+              name="img_url"
+              onChange={(e) => {
+                handleFormChange({ key: "img_url", val: e.target.value });
+              }}
+              rules={[
+                { required: true, message: "Please input an image URL!" },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+          </div>
+          <div id="description-input">
+            Description:
+            <Form.Item
+              name="content"
+              onChange={(e) => {
+                handleFormChange({ key: "content", val: e.target.value });
+              }}
+              rules={[{ required: false }]}
+            >
+              <Input.TextArea />
+            </Form.Item>
+          </div>
+          <Button
+            className="pink-button create-post-button"
+            type="primary"
+            htmlType="submit"
+            onClick={handleSubmit}
+          >
+            Create Post
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }

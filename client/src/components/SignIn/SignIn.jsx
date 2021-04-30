@@ -50,11 +50,16 @@ function SignIn(props) {
           <Input.Password />
         </Form.Item>
         <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit" onClick={handleLoginClicked}>
+          <Button
+            className="pink-button"
+            type="primary"
+            htmlType="submit"
+            onClick={handleLoginClicked}
+          >
             Log in
           </Button>
           <Link to="/register">
-            <Button type="link" htmlType="button">
+            <Button className="link-button" type="link" htmlType="button">
               Sign up
             </Button>
           </Link>

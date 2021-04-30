@@ -3,9 +3,11 @@ import SignUp from "../../components/SignUp/SignUp";
 
 function Register(props) {
   return (
-    <div>
+    <div className="register-screen">
       <h3>Sign up to start sharing</h3>
-      <SignUp />
+      <div className="register-form">
+        <SignUp />
+      </div>
       <img alt="nature" src="https://i.imgur.com/SPvqFJd.jpg" />
     </div>
   );

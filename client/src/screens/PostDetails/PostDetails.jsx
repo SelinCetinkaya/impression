@@ -70,8 +70,13 @@ function PostDetails(props) {
             )}
           </>
         ))}
-        <Button type="link" htmltype="button" onClick={showCommentModal}>
-          Add comment
+        <Button
+          className="link-button"
+          type="link"
+          htmltype="button"
+          onClick={showCommentModal}
+        >
+          Add comment...
         </Button>
         <CommentModal
           isCommentModalVisible={isCommentModalVisible}
@@ -80,7 +85,11 @@ function PostDetails(props) {
       </div>
       {post.user.id === currentUser.id && (
         <>
-          <Button type="primary" onClick={showEditModal}>
+          <Button
+            className="pink-button"
+            type="primary"
+            onClick={showEditModal}
+          >
             Edit
           </Button>
           <EditModal
