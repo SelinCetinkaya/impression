@@ -13,6 +13,12 @@ body {
   color: #a36c5b;
 }
 
+.pink-button:focus {
+  background-color: #f4cabb;
+  border-color: #a36c5b;
+  color: #a36c5b;
+}
+
 .pink-button:hover {
   background-color: white;
   border-color: #a36c5b;

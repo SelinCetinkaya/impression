@@ -32,3 +32,12 @@ hr {
 .details-buttons {
   margin: 27px;
 }
+@media only screen and (max-width: 900px) {
+  .post-details {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-details {
+    width: 60%;
+  }
+}

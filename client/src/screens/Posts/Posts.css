@@ -32,3 +32,12 @@
   font-size: 20px;
   margin-bottom: auto;
 }
+
+@media only screen and (max-width: 1000px) {
+  .posts {
+    width: 60%;
+  }
+  .post-card {
+    width: 100%;
+  }
+}
