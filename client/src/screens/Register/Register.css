@@ -1,9 +1,15 @@
-.register-form {
+/* .register-form {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .register-screen {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+#sign-up-image {
+  width: 30%;
+  /* margin-left: 40px; */
 }

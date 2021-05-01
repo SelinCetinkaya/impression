@@ -1,13 +1,34 @@
 .post-details {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .text-details {
   display: flex;
   flex-direction: column;
+  max-width: 20%;
+  padding-left: 15px;
 }
 
 .image-details {
-  height: 500px;
+  width: 40%;
+  height: auto;
+}
+
+#username-details {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+hr {
+  width: 80%;
+}
+
+#likes-num {
+  margin-left: 3px;
+}
+
+.details-buttons {
+  margin: 27px;
 }

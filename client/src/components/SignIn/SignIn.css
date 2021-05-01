@@ -1,0 +1,27 @@
+.sign-in-form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ant-form,
+.ant-form-horizontal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.ant-col,
+.ant-col-8,
+.ant-form-item-label {
+  align-self: flex-start;
+}

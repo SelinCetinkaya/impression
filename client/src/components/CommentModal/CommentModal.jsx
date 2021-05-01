@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Form, Input } from "antd";
 import { usePostsStore } from "../../stores/postsStore";
 import { useParams } from "react-router-dom";
+import "./CommentModal.css";
 
 function CommentModal({ isCommentModalVisible, setIsCommentModalVisible }) {
   const { posts, addComment } = usePostsStore();
@@ -36,7 +37,7 @@ function CommentModal({ isCommentModalVisible, setIsCommentModalVisible }) {
   return (
     <>
       <Modal
-        title="Basic Modal"
+        title="Add Comment"
         visible={isCommentModalVisible}
         onOk={handleSubmit}
         onCancel={handleCancel}
@@ -50,7 +51,7 @@ function CommentModal({ isCommentModalVisible, setIsCommentModalVisible }) {
               handleFormChange({ key: "content", val: e.target.value });
             }}
           >
-            <Input />
+            <Input.TextArea />
           </Form.Item>
         </Form>
       </Modal>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { usePostsStore } from "../../stores/postsStore";
+import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { Button } from "antd";
 import "./PostDetails.css";
 import { useCurrentUserStore } from "../../stores/currentUserStore";
@@ -8,7 +9,7 @@ import EditModal from "../../components/EditModal/EditModal";
 import CommentModal from "../../components/CommentModal/CommentModal";
 
 function PostDetails(props) {
-  const { posts, removePost, removeComment } = usePostsStore();
+  const { posts, removePost, removeComment, togglePostLiked } = usePostsStore();
   const [post, setPost] = useState({});
   const { id } = useParams();
   const history = useHistory();
@@ -34,6 +35,10 @@ function PostDetails(props) {
   }, [posts, id]);
   console.log(post);
 
+  const handleLikeClicked = (post) => {
+    togglePostLiked(post);
+  };
+
   const handleDeleteClicked = (post) => {
     removePost(post);
     history.push("/posts");
@@ -49,10 +54,26 @@ function PostDetails(props) {
     <div className="post-details">
       <img className="image-details" alt={post.content} src={post.img_url} />
       <div className="text-details">
-        <p>{post.user.username}</p>
-        <br />
+        <p id="username-details">{post.user.username}</p>
+        <div className="likes-details">
+          {post.like.is_liked ? (
+            <HeartFilled
+              style={{ color: "red" }}
+              onClick={() => {
+                handleLikeClicked(post);
+              }}
+            />
+          ) : (
+            <HeartOutlined
+              onClick={() => {
+                handleLikeClicked(post);
+              }}
+            />
+          )}
+          <span id="likes-num">{post.likesCount}</span>
+        </div>
         <p>{post.content}</p>
-        <br />
+        <hr />
         <p>Comments:</p>
         {post.comments.map((comment) => (
           <>
@@ -82,29 +103,31 @@ function PostDetails(props) {
           isCommentModalVisible={isCommentModalVisible}
           setIsCommentModalVisible={setIsCommentModalVisible}
         />
+        <div className="details-buttons">
+          {post.user.id === currentUser.id && (
+            <>
+              <Button
+                className="pink-button"
+                type="primary"
+                onClick={showEditModal}
+              >
+                Edit
+              </Button>
+              <EditModal
+                isEditModalVisible={isEditModalVisible}
+                setIsEditModalVisible={setIsEditModalVisible}
+              />
+              <Button
+                onClick={() => {
+                  handleDeleteClicked(post);
+                }}
+              >
+                Delete
+              </Button>
+            </>
+          )}
+        </div>
       </div>
-      {post.user.id === currentUser.id && (
-        <>
-          <Button
-            className="pink-button"
-            type="primary"
-            onClick={showEditModal}
-          >
-            Edit
-          </Button>
-          <EditModal
-            isEditModalVisible={isEditModalVisible}
-            setIsEditModalVisible={setIsEditModalVisible}
-          />
-          <Button
-            onClick={() => {
-              handleDeleteClicked(post);
-            }}
-          >
-            Delete
-          </Button>
-        </>
-      )}
     </div>
   );
 }

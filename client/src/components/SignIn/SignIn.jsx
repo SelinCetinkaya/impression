@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { useCurrentUserStore } from "../../stores/currentUserStore";
 import { useHistory, Link } from "react-router-dom";
+import "./SignIn.css";
 
 function SignIn(props) {
   const [form, setForm] = useState({});
@@ -27,9 +28,10 @@ function SignIn(props) {
   };
 
   return (
-    <div>
+    <div className="sign-in-form">
       <Form {...layout} name="basic">
         <Form.Item
+          className="sign-in-input"
           label="Username"
           name="username"
           onChange={(e) => {
@@ -40,6 +42,7 @@ function SignIn(props) {
           <Input />
         </Form.Item>
         <Form.Item
+          className="sign-in-input"
           label="Password"
           name="password"
           onChange={(e) => {

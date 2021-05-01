@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { useCurrentUserStore } from "../../stores/currentUserStore";
 import { useHistory, Link } from "react-router-dom";
+import "./SignUp.css";
 
 function SignUp(props) {
   const layout = {
@@ -28,9 +29,11 @@ function SignUp(props) {
   };
 
   return (
-    <div>
+    <div className="register-form">
+      <h3>Sign up to start sharing</h3>
       <Form {...layout} name="basic">
         <Form.Item
+          className="sign-up-input"
           label="Username"
           name="username"
           rules={[{ required: true, message: "Please input a username!" }]}
@@ -41,6 +44,7 @@ function SignUp(props) {
           <Input />
         </Form.Item>
         <Form.Item
+          className="sign-up-input"
           label="Password"
           name="password"
           rules={[{ required: true, message: "Please input your password!" }]}
@@ -51,6 +55,7 @@ function SignUp(props) {
           <Input.Password />
         </Form.Item>
         <Form.Item
+          className="sign-up-input"
           label="Confirm password"
           name="confirm-password"
           rules={[{ required: true, message: "Please confirm your password!" }]}
