@@ -5,3 +5,9 @@ h1 {
 h3 {
   font-size: 36px;
 }
+
+.sign-in-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
