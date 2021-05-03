@@ -71,7 +71,6 @@ export const usePostsStore = create((set, get) => ({
     const { currentUser } = useCurrentUserStore.getState();
     const posts = [...get().posts];
     const index = posts.indexOf(post);
-    console.log(post);
     const newComment = await createComment({
       content,
       user_id: currentUser.id,

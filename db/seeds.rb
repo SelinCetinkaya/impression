@@ -11,7 +11,7 @@ Comment.destroy_all
 Post.destroy_all
 User.destroy_all
 
-user1 = User.create!(username: "selin", password_digest: "123")
+user1 = User.create!(username: "selin", password: "123456")
 
 post1 = Post.create!(img_url: "randourl", content: "rando content", user: user1)
 Post.create!(img_url: "randourl2", content: "rando content 2", user: user1)

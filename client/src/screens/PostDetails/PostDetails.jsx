@@ -33,7 +33,6 @@ function PostDetails(props) {
       setPost(post);
     }
   }, [posts, id]);
-  console.log(post);
 
   const handleLikeClicked = (post) => {
     togglePostLiked(post);
@@ -104,7 +103,7 @@ function PostDetails(props) {
           setIsCommentModalVisible={setIsCommentModalVisible}
         />
         <div className="details-buttons">
-          {post.user.id === currentUser.id && (
+          {(true || post.user.id === currentUser.id) && (
             <>
               <Button
                 className="pink-button"
