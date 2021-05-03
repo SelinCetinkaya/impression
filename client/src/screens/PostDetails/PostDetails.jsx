@@ -103,7 +103,7 @@ function PostDetails(props) {
           setIsCommentModalVisible={setIsCommentModalVisible}
         />
         <div className="details-buttons">
-          {(true || post.user.id === currentUser.id) && (
+          {post.user.id === currentUser.id && (
             <>
               <Button
                 className="pink-button"
