@@ -15,8 +15,10 @@ export const usePostsStore = create((set, get) => ({
   posts: [],
   postsFetched: false,
   fetchPosts: async () => {
+    console.log("fetch");
     if (!get().postsFetched) {
       const posts = await getPosts();
+      console.log(posts);
       set({ posts: formatPosts(posts), postsFetched: true });
     }
   },

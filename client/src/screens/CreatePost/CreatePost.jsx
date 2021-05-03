@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Upload } from "antd";
+import { UploadOutlined, InboxOutlined } from "@ant-design/icons";
 
 import { useCurrentUserStore } from "../../stores/currentUserStore";
 import { usePostsStore } from "../../stores/postsStore";
@@ -29,14 +30,22 @@ function CreatePost(props) {
     history.push("/posts");
   };
 
+  const normFile = (e) => {
+    console.log("Upload event:", e);
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e && e.fileList;
+  };
+
   return (
     <div id="create-post-page">
       <h3>Create Post</h3>
       <div id="create-form-div">
         <Form id="create-form">
           <div id="img_url-input">
-            Image URL:
-            <Form.Item
+            Image:
+            {/* <Form.Item
               name="img_url"
               onChange={(e) => {
                 handleFormChange({ key: "img_url", val: e.target.value });
@@ -46,6 +55,16 @@ function CreatePost(props) {
               ]}
             >
               <Input />
+            </Form.Item> */}
+            <Form.Item
+              name="upload"
+              // label="Upload"
+              valuePropName="fileList"
+              getValueFromEvent={normFile}
+            >
+              <Upload name="logo" action="/upload.do" listType="picture">
+                <Button icon={<UploadOutlined />}>Click to upload</Button>
+              </Upload>
             </Form.Item>
           </div>
           <div id="description-input">

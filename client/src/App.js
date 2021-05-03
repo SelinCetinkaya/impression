@@ -15,6 +15,7 @@ function App() {
   const { fetchPosts, clearPosts } = usePostsStore();
 
   useEffect(() => {
+    console.log("what", currentUser);
     if (currentUser.id) {
       fetchPosts();
     } else {
